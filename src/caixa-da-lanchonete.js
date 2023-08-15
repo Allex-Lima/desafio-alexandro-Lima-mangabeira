@@ -17,7 +17,7 @@ class CaixaDaLanchonete {
         }
 
         for (const item of itens) {
-            const comprasCliente = item.split(',');
+            const comprasCliente = item.split(",");
             const elemento = comprasCliente[0];
             const qtditem = comprasCliente[1];
 
@@ -47,7 +47,7 @@ class CaixaDaLanchonete {
                     .map(compra => compra)
                     .reduce((anterior, atual) => anterior + atual, 0);
                 const valorNoCredito = totalDoCarrinho - (totalDoCarrinho * 0.05);
-                return `R$ ${valorNoCredito.toFixed(2).replace('.', ',')}`;
+                return `R$ ${valorNoCredito.toFixed(2).replace(".", ",")}`;
             } else if (metodoDePagamento === "credito") {
 
                 const itemCompra = codigos
@@ -61,7 +61,7 @@ class CaixaDaLanchonete {
                     .reduce((anterior, atual) => anterior + atual, 0);
 
                 const valorNoCredito = totalDoCarrinho + (totalDoCarrinho * 0.03);
-                return `R$ ${valorNoCredito.toFixed(2).replace('.', ',')}`;
+                return `R$ ${valorNoCredito.toFixed(2).replace(".", ",")}`;
 
             } else if (metodoDePagamento === "debito") {
                 const itemCompra = codigos
@@ -74,13 +74,12 @@ class CaixaDaLanchonete {
                     .map(compra => compra)
                     .reduce((anterior, atual) => anterior + atual, 0);
 
-                return `R$ ${totalDoCarrinho.toFixed(2).replace('.', ',')}`;
+                return `R$ ${totalDoCarrinho.toFixed(2).replace(".", ",")}`;
             } else {
                 return "Forma de pagamento inválida!";
             }
         }
     }
 }
-
 
 export { CaixaDaLanchonete };
