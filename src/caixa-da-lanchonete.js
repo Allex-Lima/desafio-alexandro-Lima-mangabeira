@@ -81,10 +81,6 @@ class CaixaDaLanchonete {
         }
     }
 }
-const caixa = new CaixaDaLanchonete();
-
-const x = caixa.calcularValorDaCompra("especie", ['cafe,3', 'sanduiche,1', 'queijo,1'])
-console.log(x);
 
 
 export { CaixaDaLanchonete };
